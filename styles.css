@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 1000px;
+    width: 100%;
+    padding: 40px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.game-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+    .game-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+.card-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.card {
+    width: 200px;
+    height: 280px;
+    background: white;
+    border: 2px solid #333;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), inset 0 1px 2px rgba(255, 255, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+    padding: 8px;
+}
+
+.card::before,
+.card::after {
+    content: attr(data-rank);
+    position: absolute;
+    font-size: 14px;
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    color: inherit;
+}
+
+.card::before {
+    top: 4px;
+    left: 4px;
+}
+
+.card::after {
+    bottom: 4px;
+    right: 4px;
+    transform: rotate(180deg);
+}
+
+.card-suit {
+    font-size: 80px;
+    line-height: 1;
+}
+
+.card-rank {
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+.card.red {
+    color: #d32f2f;
+    background: white;
+}
+
+.card.black {
+    color: #000;
+    background: white;
+}
+
+.card.joker {
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    color: #333;
+    font-size: 80px;
+}
+
+.card-info {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+    min-height: 24px;
+    background: #f9f9f9;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+    width: 100%;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-draw {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    flex: 1;
+    min-width: 200px;
+}
+
+.btn-draw:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-draw:active {
+    transform: translateY(0);
+}
+
+.btn-reset {
+    background: #f44336;
+    color: white;
+}
+
+.btn-reset:hover {
+    background: #e53935;
+    transform: translateY(-2px);
+}
+
+.rules-section {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    border: 2px solid #667eea;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.rules-section h2 {
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.rules-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+@media (max-width: 768px) {
+    .rules-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+.rule {
+    background: white;
+    padding: 12px 15px;
+    border-radius: 6px;
+    border-left: 4px solid #667eea;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    transition: all 0.2s ease;
+}
+
+.rule:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    transform: translateX(2px);
+}
+
+.rule-number {
+    font-weight: bold;
+    color: white;
+    background: #667eea;
+    padding: 4px 10px;
+    border-radius: 4px;
+    min-width: 50px;
+    text-align: center;
+    font-size: 13px;
+    flex-shrink: 0;
+}
+
+.rule-text {
+    color: #333;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.rule.highlighted {
+    background: linear-gradient(135deg, #fff3cd 0%, #fffbf0 100%);
+    border-left: 4px solid #ffc107;
+    box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3);
+}
+
+.stats {
+    text-align: center;
+    color: #666;
+    margin: 20px 0;
+}
+
+.empty-card {
+    background: linear-gradient(45deg, #ddd 25%, transparent 25%, transparent 75%, #ddd 75%, #ddd),
+                linear-gradient(45deg, #ddd 25%, transparent 25%, transparent 75%, #ddd 75%, #ddd);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+    background-color: #f5f5f5;
+    color: #999;
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>キングスカップ - 飲み会ゲーム</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>👑キングスカップ👑</h1>
+
+        <div class="game-section">
+            <div class="card-display">
+                <div class="card empty-card" id="cardDisplay">
+                    ?
+                </div>
+                <div class="card-info" id="cardInfo"></div>
+                <div class="stats" id="stats"></div>
+                <div class="button-group">
+                    <button class="btn-draw" id="drawBtn">カードを引く</button>
+                    <button class="btn-reset" id="resetBtn">リセット</button>
+                </div>
+            </div>
+
+            <div class="rules-section">
+                <h2>🎲 ルール</h2>
+                <div class="rules-list">
+                    <div class="rule" data-rank="A">
+                        <div class="rule-number">A (1)</div>
+                        <div class="rule-text">引いた人以外がグイ</div>
+                    </div>
+                    <div class="rule" data-rank="2">
+                        <div class="rule-number">2</div>
+                        <div class="rule-text">指名された人がグイ</div>
+                    </div>
+                    <div class="rule" data-rank="3">
+                        <div class="rule-number">3</div>
+                        <div class="rule-text">引いた人がグイ</div>
+                    </div>
+                    <div class="rule" data-rank="4">
+                        <div class="rule-number">4</div>
+                        <div class="rule-text">女子がグイ</div>
+                    </div>
+                    <div class="rule" data-rank="5">
+                        <div class="rule-number">5</div>
+                        <div class="rule-text">引いた人の左右がグイ</div>
+                    </div>
+                    <div class="rule" data-rank="6">
+                        <div class="rule-number">6</div>
+                        <div class="rule-text">男子がグイ</div>
+                    </div>
+                    <div class="rule" data-rank="7">
+                        <div class="rule-number">7</div>
+                        <div class="rule-text">出たら片手を上げて遅い人がグイ</div>
+                    </div>
+                    <div class="rule" data-rank="8">
+                        <div class="rule-number">8</div>
+                        <div class="rule-text">連帯責任の相棒を決める（次出たら前のは解消）</div>
+                    </div>
+                    <div class="rule" data-rank="9">
+                        <div class="rule-number">9</div>
+                        <div class="rule-text">好きなゲーム</div>
+                    </div>
+                    <div class="rule" data-rank="10">
+                        <div class="rule-number">10</div>
+                        <div class="rule-text">次のターン3枚引く</div>
+                    </div>
+                    <div class="rule" data-rank="J">
+                        <div class="rule-number">J (11)</div>
+                        <div class="rule-text">好きなルール作る</div>
+                    </div>
+                    <div class="rule" data-rank="Q">
+                        <div class="rule-number">Q (12)</div>
+                        <div class="rule-text">クエスチョンマスター（次出たら前のは解消）</div>
+                    </div>
+                    <div class="rule" data-rank="K">
+                        <div class="rule-number">K (13)</div>
+                        <div class="rule-text">4枚目を引いた人がショットをグイ</div>
+                    </div>
+                    <div class="rule" data-rank="JOKER">
+                        <div class="rule-number">JOKER</div>
+                        <div class="rule-text">2枚目引いたらショット2杯</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
