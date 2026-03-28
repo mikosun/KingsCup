@@ -66,9 +66,6 @@ function displayCard(card) {
         // JOKERのルールをハイライト
         const jokerRules = rulesList.querySelectorAll('[data-rank="JOKER"]');
         jokerRules.forEach(rule => rule.classList.add('highlighted'));
-        if (jokerRules.length > 0) {
-            jokerRules[0].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
     } else {
         const suitSymbol = card.suit;
         const rankText = card.rank;
@@ -82,9 +79,6 @@ function displayCard(card) {
         // 対応するルールをハイライト
         const targetRules = rulesList.querySelectorAll(`[data-rank="${rankText}"]`);
         targetRules.forEach(rule => rule.classList.add('highlighted'));
-        if (targetRules.length > 0) {
-            targetRules[0].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
     }
 }
 
